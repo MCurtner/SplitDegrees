@@ -1,0 +1,6 @@
+framework module Pods_SplitDegreesTests {
+  umbrella header "Pods-SplitDegreesTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
