@@ -10,14 +10,14 @@ import UIKit
 import GoogleMobileAds
 
 class ADBanner: GADBannerView {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
     override init(frame: CGRect) {
         super.init(frame: CGRect(x: 0.0, y: frame.size.height - 50, width: frame.size.width, height: 50))
         isUserInteractionEnabled = true
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
     }
     
     public func displayAd(showAds: Bool) {
