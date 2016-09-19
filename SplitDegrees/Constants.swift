@@ -24,3 +24,5 @@ let defaultFahrenheit = "32"
 
 let initialCelsiusColor = UIColor(hue: 0.5098, saturation: 1.0 , brightness: 1.0, alpha: 1.0)
 let initialFahrenheitColor = UIColor(hue: 0.5332, saturation: 1.0, brightness: 1.0, alpha: 1.0)
+
+let productIdentifiers = Set(["matthewcurtner.SplitDegrees.AdRemoval,matthewcurtner.SplitDegrees.Test"])

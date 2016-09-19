@@ -14,10 +14,6 @@ class CelsiusView: UIView {
     var celsiusValueLabel = UILabel()
     var celsiusSymbolLabel = UILabel()
     
-    var panCelsiusUp: UIPanGestureRecognizer!
-    
-    var fahrenheitValue = 0.0
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -36,13 +32,6 @@ class CelsiusView: UIView {
 
     }
     
-    /// Add UIPanGesture to the view and call setCelsiusTemp
-    /// when active
-    func addPanGensture() {
-        panCelsiusUp = UIPanGestureRecognizer() //UIPanGestureRecognizer(target: self, action: #selector(setCelsiusTemp))
-        self.addGestureRecognizer(panCelsiusUp)
-    }
-    
     /// Position the temperature value label and symbol label
     /// based on user interface idiom
     private func setupLabels() {
@@ -53,6 +42,7 @@ class CelsiusView: UIView {
             celsiusSymbolLabel = UILabel(frame: CGRect(x: self.frame.size.width/2 + 115, y: self.frame.height/2 - 60, width: 50, height: 50))
             celsiusSymbolLabel.font = tempSymbolFontIPad
             celsiusValueLabel.font = iPadFont
+            
         case .phone:
             iPhoneLblSetup()
         default:
