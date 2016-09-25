@@ -21,7 +21,6 @@ class SplitViewController: UIViewController, GADBannerViewDelegate {
     var clearLabel = UILabel()
     var isClearLabelVisible: Bool = false
     
-    var removeAdsBtn: UIButton = UIButton()
     var infoButton: UIButton = UIButton()
     
     override func viewDidLoad() {
@@ -45,11 +44,8 @@ class SplitViewController: UIViewController, GADBannerViewDelegate {
         banner.rootViewController = self
         banner.displayAd(showAds: showAds)
         view.addSubview(banner!)
-        
-        displayInfoBtn()
 
     }
-    
     
     /// Set Status Bar Style to light
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -71,14 +67,6 @@ class SplitViewController: UIViewController, GADBannerViewDelegate {
             self.clearLabel.alpha = 0
             self.clearLabel.alpha = 1
         })
-    }
-    
-    func displayInfoBtn() {
-        infoButton = UIButton(type: .infoLight)
-        infoButton.frame = CGRect(x: view.frame.width - 30, y: view.frame.size.height - 80, width: 22, height: 22)
-        infoButton.tintColor = textColor
-        infoButton.addTarget(self, action: #selector(displayAvailableActions), for: .touchUpInside)
-        self.view.addSubview(infoButton)
     }
     
     // MARK: - Shake Gesture Recognizer
@@ -235,31 +223,4 @@ class SplitViewController: UIViewController, GADBannerViewDelegate {
             return UIColor(hue: num + num, saturation: 1.0, brightness: 0.98, alpha: 1.0)
         }
     }
-    
-    
-    func displayAvailableActions() {
-        let alertController = UIAlertController(title: nil, message: "The following actions are available", preferredStyle: .actionSheet)
-        
-
-        let removeAdsAction = UIAlertAction(title: "Remove Ads", style: .default) { (action) in
-
-        }
-        alertController.addAction(removeAdsAction)
-        
-        let restoreAction = UIAlertAction(title: "Restore Purchase", style: .default) { (action) in
-        
-        }
-        alertController.addAction(restoreAction)
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-        
-        }
-        alertController.addAction(cancelAction)
-        
-        // Display the complete UIAlertController
-        self.present(alertController, animated: true, completion: nil)
-    }
-
-    
-    
 }

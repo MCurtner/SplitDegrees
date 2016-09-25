@@ -40,6 +40,7 @@ func convertStringToDouble(tempatureLblValue: String) -> Double {
     return Double(tempatureLblValue)!
 }
 
+
 /// Format the provided double value and convert to string
 ///
 /// - parameter total: Double
@@ -53,6 +54,9 @@ func convertToStringFormattedValue(total: Double) -> String {
     let fmt = NumberFormatter()
     fmt.numberStyle = .decimal
     fmt.maximumFractionDigits = 1
+    
+    // Ensure the number will be in US locale
+    fmt.locale = Locale(identifier: "en_US_POSIX")
     
     // Convert Formatted Number to String
     let str = fmt.string(from: myNumber)!

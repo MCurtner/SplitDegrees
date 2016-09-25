@@ -21,6 +21,7 @@
 		BAC230811D89BE5800C57378 /* ADBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC230801D89BE5800C57378 /* ADBanner.swift */; };
 		BAC230831D89C08F00C57378 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC230821D89C08F00C57378 /* Constants.swift */; };
 		BAC230861D89C93900C57378 /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC230851D89C93900C57378 /* Conversions.swift */; };
+		BAEA6AC91D9062E200070DC3 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEA6AC81D9062E200070DC3 /* Purchase.swift */; };
 		D2E2CDD667F85E43C7E47C2A /* Pods_SplitDegrees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C44FAC0E3173AA607D85CC9A /* Pods_SplitDegrees.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		BAC230801D89BE5800C57378 /* ADBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADBanner.swift; sourceTree = "<group>"; };
 		BAC230821D89C08F00C57378 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BAC230851D89C93900C57378 /* Conversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversions.swift; sourceTree = "<group>"; };
+		BAEA6AC81D9062E200070DC3 /* Purchase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
 		C44FAC0E3173AA607D85CC9A /* Pods_SplitDegrees.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplitDegrees.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84C06FCC80FB82306283F10 /* Pods_SplitDegreesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplitDegreesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -128,6 +130,7 @@
 				BAA75FBA1D883621008F5E6E /* Assets.xcassets */,
 				BA6304BC1D8D3526005A3ED6 /* Images.xcassets */,
 				BAA75FD51D884793008F5E6E /* SplitViewController.swift */,
+				BAEA6AC81D9062E200070DC3 /* Purchase.swift */,
 				BAA75FB31D883621008F5E6E /* AppDelegate.swift */,
 				BAC230821D89C08F00C57378 /* Constants.swift */,
 				BAA75FB71D883621008F5E6E /* Main.storyboard */,
@@ -375,6 +378,7 @@
 				BAC2307F1D89BD1D00C57378 /* FahrenheitView.swift in Sources */,
 				BAC230861D89C93900C57378 /* Conversions.swift in Sources */,
 				BAA75FB41D883621008F5E6E /* AppDelegate.swift in Sources */,
+				BAEA6AC91D9062E200070DC3 /* Purchase.swift in Sources */,
 				BAA75FE01D88638A008F5E6E /* CelsiusView.swift in Sources */,
 				BAA75FD61D884793008F5E6E /* SplitViewController.swift in Sources */,
 				BAC230831D89C08F00C57378 /* Constants.swift in Sources */,
@@ -523,7 +527,7 @@
 				INFOPLIST_FILE = SplitDegrees/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.matthewcurtner.SplitDegrees;
+				PRODUCT_BUNDLE_IDENTIFIER = matthewcurtner.SplitDegrees;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -538,7 +542,7 @@
 				INFOPLIST_FILE = SplitDegrees/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.matthewcurtner.SplitDegrees;
+				PRODUCT_BUNDLE_IDENTIFIER = matthewcurtner.SplitDegrees;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

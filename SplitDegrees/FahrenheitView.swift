@@ -37,9 +37,10 @@ class FahrenheitView: UIView {
     private func setupLabels() {
         switch UIDevice.current.userInterfaceIdiom {
         case .pad:
+            print("it is an iPad")
             // The device is an iPad
-            fahrenheitValueLabel = UILabel(frame: CGRect(x: self.frame.size.width/2, y: self.frame.height/2 - 20, width: self.frame.size.width - 10, height: 80))
-            fahrenheitSymbolLabel = UILabel(frame: CGRect(x: self.frame.size.width + self.frame.size.width - 85, y: self.frame.height/2 - 60, width: 50, height: 50))
+            fahrenheitValueLabel = UILabel(frame: CGRect(x: 3.0, y: self.frame.height/2 - 20, width: self.frame.width - 10, height: 80))
+            fahrenheitSymbolLabel = UILabel(frame: CGRect(x: self.frame.size.width/2 + 115, y: self.frame.height/2 - 60, width: 50, height: 50))
             fahrenheitSymbolLabel.font = tempSymbolFontIPad
             fahrenheitValueLabel.font = iPadFont
 
