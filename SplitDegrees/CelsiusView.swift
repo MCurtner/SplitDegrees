@@ -55,6 +55,9 @@ class CelsiusView: UIView {
         celsiusValueLabel.text = defaultCelsius
         celsiusValueLabel.textAlignment = .center
         celsiusValueLabel.textColor = textColor
+        celsiusValueLabel.shadowColor = shadowColor
+        celsiusValueLabel.shadowOffset = offsetSize
+        
         
         self.addSubview(celsiusValueLabel)
         self.addSubview(celsiusSymbolLabel)
