@@ -18,7 +18,6 @@
 		BAA75FD61D884793008F5E6E /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA75FD51D884793008F5E6E /* SplitViewController.swift */; };
 		BAA75FE01D88638A008F5E6E /* CelsiusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA75FDF1D88638A008F5E6E /* CelsiusView.swift */; };
 		BAC2307F1D89BD1D00C57378 /* FahrenheitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC2307E1D89BD1D00C57378 /* FahrenheitView.swift */; };
-		BAC230811D89BE5800C57378 /* ADBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC230801D89BE5800C57378 /* ADBanner.swift */; };
 		BAC230831D89C08F00C57378 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC230821D89C08F00C57378 /* Constants.swift */; };
 		BAC230861D89C93900C57378 /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC230851D89C93900C57378 /* Conversions.swift */; };
 		BAE94664211702EC002E135F /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC230851D89C93900C57378 /* Conversions.swift */; };
@@ -55,7 +54,6 @@
 		BAA75FD51D884793008F5E6E /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		BAA75FDF1D88638A008F5E6E /* CelsiusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CelsiusView.swift; sourceTree = "<group>"; };
 		BAC2307E1D89BD1D00C57378 /* FahrenheitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FahrenheitView.swift; sourceTree = "<group>"; };
-		BAC230801D89BE5800C57378 /* ADBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADBanner.swift; sourceTree = "<group>"; };
 		BAC230821D89C08F00C57378 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BAC230851D89C93900C57378 /* Conversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversions.swift; sourceTree = "<group>"; };
 		BAEA6AC81D9062E200070DC3 /* Purchase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 			children = (
 				BAA75FDF1D88638A008F5E6E /* CelsiusView.swift */,
 				BAC2307E1D89BD1D00C57378 /* FahrenheitView.swift */,
-				BAC230801D89BE5800C57378 /* ADBanner.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -343,7 +340,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAC230811D89BE5800C57378 /* ADBanner.swift in Sources */,
 				BAC2307F1D89BD1D00C57378 /* FahrenheitView.swift in Sources */,
 				BAC230861D89C93900C57378 /* Conversions.swift in Sources */,
 				BAA75FB41D883621008F5E6E /* AppDelegate.swift in Sources */,

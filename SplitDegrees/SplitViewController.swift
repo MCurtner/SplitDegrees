@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 
-class SplitViewController: UIViewController, GADBannerViewDelegate {
+class SplitViewController: UIViewController {
     
     // Declare Variables
     var showAds: Bool = true
@@ -17,16 +17,40 @@ class SplitViewController: UIViewController, GADBannerViewDelegate {
     
     var celsiusView: CelsiusView!
     var fahrenheitView: FahrenheitView!
-    var banner: ADBanner!
-    
+
+    lazy var adBannerView: GADBannerView = {
+        let adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        adBannerView.adUnitID = "ca-app-pub-9801328113033460/6376582230"
+        adBannerView.delegate = self
+        adBannerView.rootViewController = self
+        adBannerView.frame.origin = CGPoint(x: 0, y: view.frame.height)
+        adBannerView.load(GADRequest())
+        
+        return adBannerView
+    }()
+
     var clearLabel = UILabel()
     var isClearLabelVisible: Bool = false
     
-    var infoButton: UIButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupViews()
+        loadAd()
+    }
+    
+    /// Set Status Bar Style to light
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    func loadAd() {
+        view.addSubview(adBannerView)
+    }
+    
+    
+    func setupViews() {
         // Add Celsius View and pan gesture
         celsiusView = CelsiusView(frame: self.view.frame)
         let panCelsiusUp = UIPanGestureRecognizer(target: self, action: #selector(setCelsiusTemp))
@@ -38,21 +62,8 @@ class SplitViewController: UIViewController, GADBannerViewDelegate {
         let panFahrenheitUp = UIPanGestureRecognizer(target: self, action: #selector(setFahrenheitTemp))
         fahrenheitView.addGestureRecognizer(panFahrenheitUp)
         view.addSubview(fahrenheitView)
-        
-        // Display Ad Banner
-        banner = ADBanner(frame: self.view.frame)
-        banner.delegate = self
-        banner.rootViewController = self
-        banner.displayAd(showAds: showAds)
-        view.addSubview(banner!)
-
     }
     
-    /// Set Status Bar Style to light
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-   
     /// Create 'Shake to Reset' label with animation of fading in
     func displayClearLabel() {
         clearLabel = UILabel(frame: CGRect(x: 2.0, y: 30.0, width: self.view.frame.size.width, height: 60.0))
@@ -70,28 +81,6 @@ class SplitViewController: UIViewController, GADBannerViewDelegate {
         })
     }
     
-    // MARK: - GADBannerView Delegate Methods
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        if !adVisible {
-            UIView.animate(withDuration: 0.25, animations: {
-                self.banner.frame.origin.y -= 50
-            }) { (bool) in
-                self.adVisible = true
-            }
-        }
-    }
-    
-    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
-        if adVisible {
-            UIView.animate(withDuration: 0.25, animations: {
-                self.banner.frame.origin.y += 50
-            }) { (bool) in
-                self.adVisible = false
-            }
-        }
-    }
-    
-
     // MARK: - Shake Gesture Recognizer
     /// Allow the VC to be the first responder
     override func becomeFirstResponder() -> Bool {
@@ -171,7 +160,7 @@ class SplitViewController: UIViewController, GADBannerViewDelegate {
         }
     }
 
-    @objc func setCelsiusTemp(recognizer:UIPanGestureRecognizer) {
+    @objc func setCelsiusTemp(recognizer: UIPanGestureRecognizer) {
         let translation: CGPoint = recognizer.translation(in: recognizer.view!)
 
         if (translation.y < -20 || translation.y > 20) {
@@ -244,6 +233,33 @@ class SplitViewController: UIViewController, GADBannerViewDelegate {
             return UIColor(hue: num + num, saturation: 1.0, brightness: 0.98, alpha: 1.0)
         } else {
             return UIColor(hue: num + num, saturation: 1.0, brightness: 0.98, alpha: 1.0)
+        }
+    }
+}
+
+
+extension SplitViewController: GADBannerViewDelegate {
+    
+    // MARK: - GADBannerView Delegate Methods
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        if !adVisible {
+            UIView.animate(withDuration: 0.25, animations: {
+                self.adBannerView.frame.origin.y -= self.adBannerView.frame.size.height
+            }) { (bool) in
+                self.adVisible = true
+            }
+        }
+    }
+    
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        print(error)
+        if adVisible {
+            UIView.animate(withDuration: 0.25, animations: {
+                self.adBannerView.frame.origin.y += self.adBannerView.frame.size.height
+            }) { (bool) in
+                self.adVisible = false
+            }
         }
     }
 }
