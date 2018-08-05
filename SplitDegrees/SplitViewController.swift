@@ -76,7 +76,7 @@ class SplitViewController: UIViewController, GADBannerViewDelegate {
     }
     
     /// After shaking has ended, set the views inital values
-    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             fahrenheitView.fahrenheitValueLabel.text = defaultFahrenheit
             celsiusView.celsiusValueLabel.text = defaultCelsius
@@ -106,7 +106,7 @@ class SplitViewController: UIViewController, GADBannerViewDelegate {
     
     // MARK: - Calculate View Temperature Changes
     
-    func setFahrenheitTemp(recognizer:UIPanGestureRecognizer) {
+    @objc func setFahrenheitTemp(recognizer:UIPanGestureRecognizer) {
         // Store the point of the pan gesture
         let translation: CGPoint = recognizer.translation(in: recognizer.view!)
     
@@ -148,7 +148,7 @@ class SplitViewController: UIViewController, GADBannerViewDelegate {
         }
     }
 
-    func setCelsiusTemp(recognizer:UIPanGestureRecognizer) {
+    @objc func setCelsiusTemp(recognizer:UIPanGestureRecognizer) {
         let translation: CGPoint = recognizer.translation(in: recognizer.view!)
 
         if (translation.y < -20 || translation.y > 20) {
