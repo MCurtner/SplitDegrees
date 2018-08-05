@@ -7,8 +7,7 @@ target 'SplitDegrees' do
   use_frameworks!
 
   # Pods for SplitDegrees
-    pod 'Firebase/Core'
-    pod 'Firebase/AdMob'
+  pod 'Google-Mobile-Ads-SDK'
 
   target 'SplitDegreesTests' do
     inherit! :search_paths

@@ -13,6 +13,7 @@ class SplitViewController: UIViewController, GADBannerViewDelegate {
     
     // Declare Variables
     var showAds: Bool = true
+    var adVisible: Bool = false
     
     var celsiusView: CelsiusView!
     var fahrenheitView: FahrenheitView!
@@ -69,6 +70,28 @@ class SplitViewController: UIViewController, GADBannerViewDelegate {
         })
     }
     
+    // MARK: - GADBannerView Delegate Methods
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        if !adVisible {
+            UIView.animate(withDuration: 0.25, animations: {
+                self.banner.frame.origin.y -= 50
+            }) { (bool) in
+                self.adVisible = true
+            }
+        }
+    }
+    
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        if adVisible {
+            UIView.animate(withDuration: 0.25, animations: {
+                self.banner.frame.origin.y += 50
+            }) { (bool) in
+                self.adVisible = false
+            }
+        }
+    }
+    
+
     // MARK: - Shake Gesture Recognizer
     /// Allow the VC to be the first responder
     override func becomeFirstResponder() -> Bool {
