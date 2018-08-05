@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ED564DFFE17D5E6292365A91A0B763A2"
+               BlueprintIdentifier = "AD100A29F48FB8EC521C1E212F1EBDE9"
                BuildableName = "Pods_SplitDegreesTests.framework"
                BlueprintName = "Pods-SplitDegreesTests"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ED564DFFE17D5E6292365A91A0B763A2"
+            BlueprintIdentifier = "AD100A29F48FB8EC521C1E212F1EBDE9"
             BuildableName = "Pods_SplitDegreesTests.framework"
             BlueprintName = "Pods-SplitDegreesTests"
             ReferencedContainer = "container:Pods.xcodeproj">
