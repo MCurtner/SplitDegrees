@@ -8,12 +8,15 @@
 
 import UIKit
 import GoogleMobileAds
+import Reachability
 
 class SplitViewController: UIViewController {
     
     // Declare Variables
-    var showAds: Bool = true
+    let reachability = Reachability()!
+    
     var adVisible: Bool = false
+    var isClearLabelVisible: Bool = false
     
     var celsiusView: CelsiusView!
     var fahrenheitView: FahrenheitView!
@@ -30,26 +33,36 @@ class SplitViewController: UIViewController {
     }()
 
     var clearLabel = UILabel()
-    var isClearLabelVisible: Bool = false
+
     
-    
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         setupViews()
         loadAd()
     }
+    
+    /// View will appear setup
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Set and start the reachablity notifier
+        setReachabilityNotifier()
+    }
+    
     
     /// Set Status Bar Style to light
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
+    ///  Add the adBannerView to the view
     func loadAd() {
         view.addSubview(adBannerView)
     }
     
-    
+    /// Setup and add the views to the VC view
     func setupViews() {
         // Add Celsius View and pan gesture
         celsiusView = CelsiusView(frame: self.view.frame)
@@ -237,11 +250,42 @@ class SplitViewController: UIViewController {
     }
 }
 
+// MARK: - Reachability Methods
+extension SplitViewController {
+    func setReachabilityNotifier() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
+        do{
+            try reachability.startNotifier()
+        }catch{
+            print("could not start reachability notifier")
+        }
+    }
+    
+    @objc func reachabilityChanged(note: Notification) {
+        let reachability = note.object as! Reachability
+        
+        switch reachability.connection {
+        case .wifi:
+            print("Reachable via WiFi")
+            // Call the GADBannerViewDelegate to load the ad
+            adViewDidReceiveAd(adBannerView)
+        case .cellular:
+            print("Reachable via Cellular")
+        case .none:
+            print("Network not reachable")
+        }
+    }
+    
+    /// Stop and remove the the notifier observer. Called in the AppDelegate
+    func stopReachabilityNotifier() {
+        reachability.stopNotifier()
+        NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: reachability)
+    }
+}
 
+
+// MARK: - GADBannerView Delegate Methods
 extension SplitViewController: GADBannerViewDelegate {
-    
-    // MARK: - GADBannerView Delegate Methods
-    
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         if !adVisible {
             UIView.animate(withDuration: 0.25, animations: {
@@ -251,9 +295,9 @@ extension SplitViewController: GADBannerViewDelegate {
             }
         }
     }
-    
+
     func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
-        print(error)
+        print("MCU: Error in loading ad: \(error)")
         if adVisible {
             UIView.animate(withDuration: 0.25, animations: {
                 self.adBannerView.frame.origin.y += self.adBannerView.frame.size.height

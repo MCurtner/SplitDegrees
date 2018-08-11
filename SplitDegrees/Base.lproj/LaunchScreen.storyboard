@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.3.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,14 +18,14 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lw9-sg-Zfl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sff-P5-qNc">
-                                        <rect key="frame" x="188.5" y="0.0" width="186.5" height="667"/>
+                                        <rect key="frame" x="161" y="0.0" width="159" height="568"/>
                                         <color key="backgroundColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
@@ -38,20 +38,20 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jI-XL-PdJ">
-                                <rect key="frame" x="138" y="291" width="93" height="46"/>
+                                <rect key="frame" x="110.5" y="241.5" width="93" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8jI-XL-PdJ" secondAttribute="height" multiplier="93:46" id="Q2S-qT-dkx"/>
                                     <constraint firstAttribute="height" constant="46" id="aMr-Bo-sUq"/>
-                                    <constraint firstAttribute="width" constant="93" id="fhN-o3-Y76"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="93" id="fhN-o3-Y76"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Degrees" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSA-R0-8UB">
-                                <rect key="frame" x="163" y="326" width="191.5" height="47"/>
+                                <rect key="frame" x="135.5" y="276.5" width="191.5" height="47"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="191.33333333333334" id="XNE-IY-exa"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="191.33333333333334" id="XNE-IY-exa"/>
                                     <constraint firstAttribute="height" constant="47" id="pD1-bS-Sao"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>

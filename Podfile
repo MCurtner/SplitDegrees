@@ -8,6 +8,7 @@ target 'SplitDegrees' do
 
   # Pods for SplitDegrees
   pod 'Google-Mobile-Ads-SDK'
+  pod 'ReachabilitySwift'
 
   target 'SplitDegreesTests' do
     inherit! :search_paths

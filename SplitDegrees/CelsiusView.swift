@@ -29,7 +29,6 @@ class CelsiusView: UIView {
         isUserInteractionEnabled = true
         
         setupLabels()
-
     }
     
     /// Position the temperature value label and symbol label
