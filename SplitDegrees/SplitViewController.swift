@@ -14,7 +14,7 @@ class SplitViewController: UIViewController {
     
     // Declare Variables
     let reachability = Reachability()!
-    
+
     var adVisible: Bool = false
     var isClearLabelVisible: Bool = false
     
@@ -287,6 +287,8 @@ extension SplitViewController {
 // MARK: - GADBannerView Delegate Methods
 extension SplitViewController: GADBannerViewDelegate {
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("Ad loaded")
+        
         if !adVisible {
             UIView.animate(withDuration: 0.25, animations: {
                 self.adBannerView.frame.origin.y -= self.adBannerView.frame.size.height
