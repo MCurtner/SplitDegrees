@@ -8,13 +8,10 @@
 
 import UIKit
 import GoogleMobileAds
-import Reachability
 
 class SplitViewController: UIViewController {
     
     // Declare Variables
-    let reachability = Reachability()!
-
     var adVisible: Bool = false
     var isClearLabelVisible: Bool = false
     
@@ -48,7 +45,6 @@ class SplitViewController: UIViewController {
         super.viewWillAppear(animated)
         
         // Set and start the reachablity notifier
-        setReachabilityNotifier()
     }
     
     
@@ -148,7 +144,7 @@ class SplitViewController: UIViewController {
         
             //Add one to value and
             let increasedValue = (currentFahrValue + Double(sign * 1))
-            print(increasedValue)
+            //print(increasedValue)
             
             // Display 'Shake to Reset' label
             if increasedValue > 32 || increasedValue < 32 {
@@ -250,45 +246,9 @@ class SplitViewController: UIViewController {
     }
 }
 
-// MARK: - Reachability Methods
-extension SplitViewController {
-    func setReachabilityNotifier() {
-        NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
-        do{
-            try reachability.startNotifier()
-        }catch{
-            print("could not start reachability notifier")
-        }
-    }
-    
-    @objc func reachabilityChanged(note: Notification) {
-        let reachability = note.object as! Reachability
-        
-        switch reachability.connection {
-        case .wifi:
-            print("Reachable via WiFi")
-            // Call the GADBannerViewDelegate to load the ad
-            adViewDidReceiveAd(adBannerView)
-        case .cellular:
-            print("Reachable via Cellular")
-        case .none:
-            print("Network not reachable")
-        }
-    }
-    
-    /// Stop and remove the the notifier observer. Called in the AppDelegate
-    func stopReachabilityNotifier() {
-        reachability.stopNotifier()
-        NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: reachability)
-    }
-}
-
-
 // MARK: - GADBannerView Delegate Methods
 extension SplitViewController: GADBannerViewDelegate {
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        print("Ad loaded")
-        
         if !adVisible {
             UIView.animate(withDuration: 0.25, animations: {
                 self.adBannerView.frame.origin.y -= self.adBannerView.frame.size.height
