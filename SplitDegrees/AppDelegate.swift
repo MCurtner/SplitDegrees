@@ -8,6 +8,8 @@
 
 import UIKit
 import GoogleMobileAds
+import Firebase
+import Fabric
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         GADMobileAds.configure(withApplicationID: "ca-app-pub-9801328113033460~4899849037")
+        FirebaseApp.configure()
+        Fabric.sharedSDK().debug = true
+        
         return true
     }
 

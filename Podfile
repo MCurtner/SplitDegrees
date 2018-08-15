@@ -8,6 +8,9 @@ target 'SplitDegrees' do
 
   # Pods for SplitDegrees
   pod 'Google-Mobile-Ads-SDK'
+  pod 'Firebase/Core'
+  pod 'Fabric', '~> 1.7.9'
+  pod 'Crashlytics', '~> 3.10.5'
 
   target 'SplitDegreesTests' do
     inherit! :search_paths
