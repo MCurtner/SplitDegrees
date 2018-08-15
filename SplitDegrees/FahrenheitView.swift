@@ -14,7 +14,6 @@ class FahrenheitView: UIView {
     var fahrenheitValueLabel = UILabel()
     var fahrenheitSymbolLabel = UILabel()
     
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
