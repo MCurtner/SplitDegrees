@@ -62,7 +62,6 @@ class CelsiusView: UIView {
         self.addSubview(celsiusSymbolLabel)
     }
     
-    
     /// iPhone label size, position, and font setup function
     private func iPhoneLblSetup() {
         // The device is an iPhone or iPod touch.
