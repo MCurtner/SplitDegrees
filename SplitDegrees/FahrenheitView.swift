@@ -52,9 +52,13 @@ class FahrenheitView: UIView {
 
         fahrenheitSymbolLabel.textColor = textColor
         fahrenheitSymbolLabel.text = "℉"
+        fahrenheitSymbolLabel.shadowColor = shadowColor
+        fahrenheitSymbolLabel.shadowOffset = offsetSize
+        fahrenheitSymbolLabel.textAlignment = .center
+        fahrenheitSymbolLabel.textColor = textColor
+        
         fahrenheitValueLabel.shadowColor = shadowColor
         fahrenheitValueLabel.shadowOffset = offsetSize
-        
         fahrenheitValueLabel.text = defaultFahrenheit
         fahrenheitValueLabel.textAlignment = .center
         fahrenheitValueLabel.textColor = textColor

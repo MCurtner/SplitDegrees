@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		05DBFF376F7E945ACB6B0C90 /* Pods_SplitDegreesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84C06FCC80FB82306283F10 /* Pods_SplitDegreesTests.framework */; };
+		BA16B4EC2125AF8C009C3D3D /* TempController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA16B4EB2125AF8C009C3D3D /* TempController.swift */; };
+		BA16B4EF2125BA9E009C3D3D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA16B4EE2125BA9E009C3D3D /* Extensions.swift */; };
 		BA6304BD1D8D3526005A3ED6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA6304BC1D8D3526005A3ED6 /* Images.xcassets */; };
 		BAA75FB41D883621008F5E6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA75FB31D883621008F5E6E /* AppDelegate.swift */; };
 		BAA75FB91D883621008F5E6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAA75FB71D883621008F5E6E /* Main.storyboard */; };
@@ -19,8 +21,6 @@
 		BAA75FE01D88638A008F5E6E /* CelsiusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA75FDF1D88638A008F5E6E /* CelsiusView.swift */; };
 		BAC2307F1D89BD1D00C57378 /* FahrenheitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC2307E1D89BD1D00C57378 /* FahrenheitView.swift */; };
 		BAC230831D89C08F00C57378 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC230821D89C08F00C57378 /* Constants.swift */; };
-		BAC230861D89C93900C57378 /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC230851D89C93900C57378 /* Conversions.swift */; };
-		BAE94664211702EC002E135F /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC230851D89C93900C57378 /* Conversions.swift */; };
 		D2E2CDD667F85E43C7E47C2A /* Pods_SplitDegrees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C44FAC0E3173AA607D85CC9A /* Pods_SplitDegrees.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +39,8 @@
 		7AF8734419668AFA9BF1C749 /* Pods-SplitDegrees.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitDegrees.release.xcconfig"; path = "Pods/Target Support Files/Pods-SplitDegrees/Pods-SplitDegrees.release.xcconfig"; sourceTree = "<group>"; };
 		8AD9C337E2A8CD3BE7AB8F63 /* Pods-SplitDegreesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitDegreesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SplitDegreesTests/Pods-SplitDegreesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ACD27C47F423A8799722DAC0 /* Pods-SplitDegreesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitDegreesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SplitDegreesTests/Pods-SplitDegreesTests.release.xcconfig"; sourceTree = "<group>"; };
+		BA16B4EB2125AF8C009C3D3D /* TempController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempController.swift; sourceTree = "<group>"; };
+		BA16B4EE2125BA9E009C3D3D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BA6304BC1D8D3526005A3ED6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BAA75FB01D883621008F5E6E /* SplitDegrees.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitDegrees.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA75FB31D883621008F5E6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +56,6 @@
 		BAA75FDF1D88638A008F5E6E /* CelsiusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CelsiusView.swift; sourceTree = "<group>"; };
 		BAC2307E1D89BD1D00C57378 /* FahrenheitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FahrenheitView.swift; sourceTree = "<group>"; };
 		BAC230821D89C08F00C57378 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		BAC230851D89C93900C57378 /* Conversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversions.swift; sourceTree = "<group>"; };
 		C44FAC0E3173AA607D85CC9A /* Pods_SplitDegrees.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplitDegrees.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84C06FCC80FB82306283F10 /* Pods_SplitDegreesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplitDegreesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -99,6 +100,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BA16B4EA2125AF72009C3D3D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA16B4EB2125AF8C009C3D3D /* TempController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BA16B4ED2125BA85009C3D3D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BA16B4EE2125BA9E009C3D3D /* Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		BAA75FA71D883621008F5E6E = {
 			isa = PBXGroup;
 			children = (
@@ -123,8 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				BAE94663211700D7002E135F /* AppDelegate */,
+				BA16B4EA2125AF72009C3D3D /* Controller */,
 				BAE94662211700C2002E135F /* Constants */,
-				BAC230841D89C92000C57378 /* Conversions */,
+				BA16B4ED2125BA85009C3D3D /* Extensions */,
 				BAA75FDA1D885874008F5E6E /* Views */,
 				BAE94661211700A3002E135F /* ViewControllers */,
 				BAA75FBA1D883621008F5E6E /* Assets.xcassets */,
@@ -153,14 +171,6 @@
 				BAC2307E1D89BD1D00C57378 /* FahrenheitView.swift */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		BAC230841D89C92000C57378 /* Conversions */ = {
-			isa = PBXGroup;
-			children = (
-				BAC230851D89C93900C57378 /* Conversions.swift */,
-			);
-			name = Conversions;
 			sourceTree = "<group>";
 		};
 		BAE94661211700A3002E135F /* ViewControllers */ = {
@@ -378,11 +388,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAC2307F1D89BD1D00C57378 /* FahrenheitView.swift in Sources */,
-				BAC230861D89C93900C57378 /* Conversions.swift in Sources */,
+				BA16B4EC2125AF8C009C3D3D /* TempController.swift in Sources */,
 				BAA75FB41D883621008F5E6E /* AppDelegate.swift in Sources */,
 				BAA75FE01D88638A008F5E6E /* CelsiusView.swift in Sources */,
 				BAA75FD61D884793008F5E6E /* SplitViewController.swift in Sources */,
 				BAC230831D89C08F00C57378 /* Constants.swift in Sources */,
+				BA16B4EF2125BA9E009C3D3D /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +402,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAA75FC91D883621008F5E6E /* SplitDegreesTests.swift in Sources */,
-				BAE94664211702EC002E135F /* Conversions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,7 @@ class CelsiusView: UIView {
     
     // Declare Labels
     var celsiusValueLabel = UILabel()
-    var celsiusSymbolLabel = UILabel()
+    private var celsiusSymbolLabel = UILabel()
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -27,10 +27,11 @@ class CelsiusView: UIView {
         super.init(frame: CGRect(x: 0.0, y: 0.0, width: frame.size.width/2, height: frame.size.height))
         backgroundColor = initialCelsiusColor
         isUserInteractionEnabled = true
-        
+
         setupLabels()
+
     }
-    
+
     /// Position the temperature value label and symbol label
     /// based on user interface idiom
     private func setupLabels() {
@@ -48,8 +49,13 @@ class CelsiusView: UIView {
             iPhoneLblSetup()
         }
         
+        
+        celsiusSymbolLabel.text = defaultCelsius
+        celsiusSymbolLabel.textAlignment = .center
         celsiusSymbolLabel.textColor = textColor
         celsiusSymbolLabel.text = "℃"
+        celsiusSymbolLabel.shadowColor = shadowColor
+        celsiusSymbolLabel.shadowOffset = offsetSize
         
         celsiusValueLabel.text = defaultCelsius
         celsiusValueLabel.textAlignment = .center
@@ -61,6 +67,7 @@ class CelsiusView: UIView {
         self.addSubview(celsiusValueLabel)
         self.addSubview(celsiusSymbolLabel)
     }
+    
     
     /// iPhone label size, position, and font setup function
     private func iPhoneLblSetup() {
