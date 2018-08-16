@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         GADMobileAds.configure(withApplicationID: "ca-app-pub-9801328113033460~4899849037")
         FirebaseApp.configure()
-        Fabric.sharedSDK().debug = true
         
         return true
     }
