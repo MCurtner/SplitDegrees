@@ -8,13 +8,12 @@
 
 import UIKit
 import GoogleMobileAds
-import Crashlytics
 
 class SplitViewController: UIViewController {
     
     // Declare Variables
-    var celsiusView: CelsiusView!
-    var fahrenheitView: FahrenheitView!
+    var celsiusView: TemperatureView!
+    var fahrenheitView: TemperatureView!
     var tempController = TempController()
     
     var clearLabel = UILabel()
@@ -24,7 +23,7 @@ class SplitViewController: UIViewController {
     
     lazy var adBannerView: GADBannerView = {
         let adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
-        adBannerView.adUnitID = "ca-app-pub-9801328113033460/6376582230"
+        adBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716" //"ca-app-pub-9801328113033460/6376582230"
         adBannerView.delegate = self
         adBannerView.rootViewController = self
         adBannerView.load(GADRequest())
@@ -36,7 +35,8 @@ class SplitViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        setupViews()
+        setupCelsiusView()
+        setupFahrenheitView()
         loadAd()
     }
     
@@ -50,18 +50,40 @@ class SplitViewController: UIViewController {
         view.addSubview(adBannerView)
     }
     
-    /// Setup and add the views to the VC view
-    func setupViews() {
-        // Add Celsius View and pan gesture
-        celsiusView = CelsiusView(frame: self.view.frame)
-        let panCelsiusUp = UIPanGestureRecognizer(target: self, action: #selector(calcTemp))
-        celsiusView.addGestureRecognizer(panCelsiusUp)
-        view.addSubview(celsiusView)
+    private func setupView(frame: CGRect, backgroundColor: UIColor, temperatureValue: String, symbol: String) -> TemperatureView {
+        let view = TemperatureView(frame: frame)
+        view.backgroundColor = backgroundColor
+        view.temperatureLabel.text = temperatureValue
+        view.symbolLabel.text = symbol
         
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(calcTemp))
+        view.addGestureRecognizer(panGesture)
+        
+        return view
+    }
+    
+    func setupCelsiusView() {
+        // Add Celsius View and pan gesture
+        celsiusView = setupView(frame: CGRect(x: 0.0,
+                                              y: 0.0,
+                                              width: self.view.frame.size.width / 2,
+                                              height: self.view.frame.size.height),
+                                backgroundColor: initialCelsiusColor,
+                                temperatureValue: defaultCelsius,
+                                symbol: celsiusSymbol)
+        
+        view.addSubview(celsiusView)
+    }
+    
+    func setupFahrenheitView() {
         // Add Fahrenheit View and pan gesture
-        fahrenheitView = FahrenheitView(frame: self.view.frame)
-        let panFahrenheitUp = UIPanGestureRecognizer(target: self, action: #selector(calcTemp))
-        fahrenheitView.addGestureRecognizer(panFahrenheitUp)
+        fahrenheitView = setupView(frame: CGRect(x: self.view.frame.size.width / 2,
+                                                 y: 0.0,
+                                                 width: self.view.frame.size.width / 2,
+                                                 height: self.view.frame.size.height),
+                                   backgroundColor: initialFahrenheitColor,
+                                   temperatureValue: defaultFahrenheit,
+                                   symbol: fahrenheitSymbol)
 
         view.addSubview(fahrenheitView)
     }
@@ -92,8 +114,9 @@ class SplitViewController: UIViewController {
     /// After shaking has ended, set the views inital values
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            fahrenheitView.fahrenheitValueLabel.text = defaultFahrenheit
-            celsiusView.celsiusValueLabel.text = defaultCelsius
+            fahrenheitView.temperatureLabel.text = defaultFahrenheit
+            celsiusView.temperatureLabel.text = defaultCelsius
+            
             setInitialBackgroundColors()
             
             if isClearLabelVisible == true {
@@ -129,14 +152,14 @@ class SplitViewController: UIViewController {
             
             
             if recognizer.view == celsiusView {
-                var currentCelsiusValue = celsiusView.celsiusValueLabel.text!.doubleValue
-                
+                var currentCelsiusValue = celsiusView.temperatureLabel.text!.doubleValue
+
                 //Round the value
                 currentCelsiusValue = round(currentCelsiusValue)
-                
+
                 //Add one to value and
                 let increasedValue = (currentCelsiusValue + Double(sign * 1))
-                
+
                 // Display 'Shake to Reset' label
                 if increasedValue > 0 || increasedValue < 0 {
                     if isClearLabelVisible == false {
@@ -144,31 +167,31 @@ class SplitViewController: UIViewController {
                         isClearLabelVisible = true
                     }
                 }
-                
+
                 //Update UIView background color
                 fahrenheitView.backgroundColor = TempController().fahrenheitColor(temperature: 32.0 + (CGFloat(increasedValue) * 1.800))
                 celsiusView.backgroundColor = TempController().celsiusColor(temperature: 32.0 + (CGFloat(increasedValue) * 1.800))
-                
+
                 //Display Celsius value
-                celsiusView.celsiusValueLabel.text = tempController.convertToStringFormattedValue(total: increasedValue)
-                
+                celsiusView.temperatureLabel.text = tempController.convertToStringFormattedValue(total: increasedValue)
+
                 //Convert Celsius to Fahrenheit
-                let fahrenheitValue = tempController.convertCelsiusToFahrenheit(celsius: celsiusView.celsiusValueLabel.text!.doubleValue)
-                
+                let fahrenheitValue = tempController.convertCelsiusToFahrenheit(celsius: celsiusView.temperatureLabel.text!.doubleValue)
+
                 //Display Fahrenheit value
-                fahrenheitView.fahrenheitValueLabel.text = tempController.convertToStringFormattedValue(total: fahrenheitValue)
-                
+                fahrenheitView.temperatureLabel.text = tempController.convertToStringFormattedValue(total: fahrenheitValue)
+
             } else {
                 //Convert text to double
-                var currentFahrValue = fahrenheitView.fahrenheitValueLabel.text!.doubleValue
-                
+                var currentFahrValue = fahrenheitView.temperatureLabel.text!.doubleValue
+
                 //Round the Value
                 currentFahrValue = round(currentFahrValue)
-                
+
                 //Add one to value and
                 let increasedValue = (currentFahrValue + Double(sign * 1))
                 //print(increasedValue)
-                
+
                 // Display 'Shake to Reset' label
                 if increasedValue > 32 || increasedValue < 32 {
                     if isClearLabelVisible == false {
@@ -176,19 +199,19 @@ class SplitViewController: UIViewController {
                         isClearLabelVisible = true
                     }
                 }
-                
+
                 //Update the View's background colors
                 fahrenheitView.backgroundColor = tempController.fahrenheitColor(temperature: CGFloat(increasedValue))
                 celsiusView.backgroundColor = tempController.celsiusColor(temperature: CGFloat(increasedValue))
-                
+
                 //Display Fahrenheit value
-                fahrenheitView.fahrenheitValueLabel.text = tempController.convertToStringFormattedValue(total: increasedValue)
-                
+                fahrenheitView.temperatureLabel.text = tempController.convertToStringFormattedValue(total: increasedValue)
+
                 //Convert Fahrenheit to Celsius
-                let celsiusValue = tempController.convertFahrenheitToCelsius(fahrenheit: fahrenheitView.fahrenheitValueLabel.text!.doubleValue)
-                
+                let celsiusValue = tempController.convertFahrenheitToCelsius(fahrenheit: fahrenheitView.temperatureLabel.text!.doubleValue)
+
                 //Display celsius value
-                celsiusView.celsiusValueLabel.text = tempController.convertToStringFormattedValue(total: celsiusValue)
+                celsiusView.temperatureLabel.text = tempController.convertToStringFormattedValue(total: celsiusValue)
             }
         }
     }

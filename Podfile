@@ -1,6 +1,6 @@
 # Uncomment this line to define a global platform for your project
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'SplitDegrees' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
@@ -8,9 +8,8 @@ target 'SplitDegrees' do
 
   # Pods for SplitDegrees
   pod 'Google-Mobile-Ads-SDK'
-  pod 'Firebase/Core'
-  pod 'Fabric', '~> 1.7.9'
-  pod 'Crashlytics', '~> 3.10.5'
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Analytics'
 
   target 'SplitDegreesTests' do
     inherit! :search_paths

@@ -11,6 +11,7 @@
 		BA16B4EC2125AF8C009C3D3D /* TempController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA16B4EB2125AF8C009C3D3D /* TempController.swift */; };
 		BA16B4EF2125BA9E009C3D3D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA16B4EE2125BA9E009C3D3D /* Extensions.swift */; };
 		BA6304BD1D8D3526005A3ED6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA6304BC1D8D3526005A3ED6 /* Images.xcassets */; };
+		BA971401246F231900A396F3 /* TemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA971400246F231900A396F3 /* TemperatureView.swift */; };
 		BAA75FB41D883621008F5E6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA75FB31D883621008F5E6E /* AppDelegate.swift */; };
 		BAA75FB91D883621008F5E6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAA75FB71D883621008F5E6E /* Main.storyboard */; };
 		BAA75FBB1D883621008F5E6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA75FBA1D883621008F5E6E /* Assets.xcassets */; };
@@ -18,8 +19,6 @@
 		BAA75FC91D883621008F5E6E /* SplitDegreesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA75FC81D883621008F5E6E /* SplitDegreesTests.swift */; };
 		BAA75FD41D883E1B008F5E6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAA75FD31D883E1B008F5E6E /* GoogleService-Info.plist */; };
 		BAA75FD61D884793008F5E6E /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA75FD51D884793008F5E6E /* SplitViewController.swift */; };
-		BAA75FE01D88638A008F5E6E /* CelsiusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA75FDF1D88638A008F5E6E /* CelsiusView.swift */; };
-		BAC2307F1D89BD1D00C57378 /* FahrenheitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC2307E1D89BD1D00C57378 /* FahrenheitView.swift */; };
 		BAC230831D89C08F00C57378 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC230821D89C08F00C57378 /* Constants.swift */; };
 		D2E2CDD667F85E43C7E47C2A /* Pods_SplitDegrees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C44FAC0E3173AA607D85CC9A /* Pods_SplitDegrees.framework */; };
 /* End PBXBuildFile section */
@@ -42,6 +41,7 @@
 		BA16B4EB2125AF8C009C3D3D /* TempController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempController.swift; sourceTree = "<group>"; };
 		BA16B4EE2125BA9E009C3D3D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BA6304BC1D8D3526005A3ED6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BA971400246F231900A396F3 /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
 		BAA75FB01D883621008F5E6E /* SplitDegrees.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitDegrees.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA75FB31D883621008F5E6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAA75FB81D883621008F5E6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,8 +53,6 @@
 		BAA75FCA1D883621008F5E6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAA75FD31D883E1B008F5E6E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BAA75FD51D884793008F5E6E /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
-		BAA75FDF1D88638A008F5E6E /* CelsiusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CelsiusView.swift; sourceTree = "<group>"; };
-		BAC2307E1D89BD1D00C57378 /* FahrenheitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FahrenheitView.swift; sourceTree = "<group>"; };
 		BAC230821D89C08F00C57378 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C44FAC0E3173AA607D85CC9A /* Pods_SplitDegrees.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplitDegrees.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84C06FCC80FB82306283F10 /* Pods_SplitDegreesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplitDegreesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,8 +165,7 @@
 		BAA75FDA1D885874008F5E6E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BAA75FDF1D88638A008F5E6E /* CelsiusView.swift */,
-				BAC2307E1D89BD1D00C57378 /* FahrenheitView.swift */,
+				BA971400246F231900A396F3 /* TemperatureView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -209,7 +206,6 @@
 				BAA75FAD1D883621008F5E6E /* Frameworks */,
 				BAA75FAE1D883621008F5E6E /* Resources */,
 				274359441E17809240E09031 /* [CP] Embed Pods Frameworks */,
-				BA16B4C92124A1F3009C3D3D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -246,19 +242,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Matthew Curtner";
 				TargetAttributes = {
 					BAA75FAF1D883621008F5E6E = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = M77G4VQ69B;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 					};
 					BAA75FC31D883621008F5E6E = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = M77G4VQ69B;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 						TestTargetID = BAA75FAF1D883621008F5E6E;
 					};
@@ -266,7 +262,7 @@
 			};
 			buildConfigurationList = BAA75FAB1D883621008F5E6E /* Build configuration list for PBXProject "SplitDegrees" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -312,18 +308,20 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SplitDegrees/Pods-SplitDegrees-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SplitDegrees/Pods-SplitDegrees-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SplitDegrees/Pods-SplitDegrees-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SplitDegrees/Pods-SplitDegrees-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		917DADABBDAC19A0AE2B72BC /* [CP] Check Pods Manifest.lock */ = {
@@ -343,24 +341,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		BA16B4C92124A1F3009C3D3D /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/Fabric/run\"\n";
 		};
 		FD717E73733DFE5FA77AD96F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -387,10 +367,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAC2307F1D89BD1D00C57378 /* FahrenheitView.swift in Sources */,
+				BA971401246F231900A396F3 /* TemperatureView.swift in Sources */,
 				BA16B4EC2125AF8C009C3D3D /* TempController.swift in Sources */,
 				BAA75FB41D883621008F5E6E /* AppDelegate.swift in Sources */,
-				BAA75FE01D88638A008F5E6E /* CelsiusView.swift in Sources */,
 				BAA75FD61D884793008F5E6E /* SplitViewController.swift in Sources */,
 				BAC230831D89C08F00C57378 /* Constants.swift in Sources */,
 				BA16B4EF2125BA9E009C3D3D /* Extensions.swift in Sources */,
@@ -439,6 +418,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -498,6 +478,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -556,10 +537,11 @@
 				INFOPLIST_FILE = SplitDegrees/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = matthewcurtner.SplitDegrees;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -572,10 +554,11 @@
 				INFOPLIST_FILE = SplitDegrees/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = matthewcurtner.SplitDegrees;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -590,8 +573,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.matthewcurtner.SplitDegreesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SplitDegrees.app/SplitDegrees";
 			};
 			name = Debug;
@@ -607,8 +590,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.matthewcurtner.SplitDegreesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SplitDegrees.app/SplitDegrees";
 			};
 			name = Release;

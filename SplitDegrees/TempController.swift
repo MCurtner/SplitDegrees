@@ -12,7 +12,7 @@ class TempController {
     
     //MARK: - Temperature Conversion Methods
     
-    /// Convert Fahrenheit value to Celsius
+    /// Convert Fahrenheit  to Celsius
     ///
     /// - parameter fahrenheit: Fahrenheit Double Value
     ///
@@ -22,7 +22,7 @@ class TempController {
         return celsius
     }
     
-    /// Convert Celsius value to Fahrenheit
+    /// Convert Celsius  to Fahrenheit
     ///
     /// - parameter celsius: Celsius Double Value
     ///
